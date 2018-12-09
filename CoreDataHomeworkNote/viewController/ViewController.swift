@@ -38,6 +38,10 @@ class ViewController: UIViewController {
     // Option button tap handler for changing language using localization
     @IBAction func optionButton(_ sender: Any) {
         let alertController = UIAlertController(title: "Choose your language", message: "", preferredStyle: .actionSheet)
+        // Ipad actionSheet configure
+        alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection()
+        alertController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         //English was chosen
         let en = UIAlertAction(title: "English", style: .default, handler: {(alert) in
             self.takeNoteLabel.text = "Take a note..."

@@ -51,10 +51,10 @@
                                 </constraints>
                                 <items/>
                             </toolbar>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Take a note..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcW-cV-6YP">
-                                <rect key="frame" x="16" y="743" width="179" height="21"/>
+                            <label opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" text="Take a note..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcW-cV-6YP">
+                                <rect key="frame" x="16" y="743" width="201" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="               " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-So-L5C">
@@ -77,6 +77,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="upW-So-L5C" secondAttribute="trailing" constant="16" id="Zh4-On-bbq"/>
                             <constraint firstItem="vjx-gP-lqp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fDF-hx-Yeg"/>
                             <constraint firstItem="qcn-yv-WnN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fp3-Wt-M79"/>
+                            <constraint firstItem="upW-So-L5C" firstAttribute="leading" secondItem="AcW-cV-6YP" secondAttribute="trailing" constant="8" id="yFB-f2-sDp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
