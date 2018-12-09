@@ -13,6 +13,11 @@
 		60A29EB421BBB1D200CA819C /* CoreDataHomeworkNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60A29EB221BBB1D200CA819C /* CoreDataHomeworkNote.xcdatamodeld */; };
 		60A29EB621BBB1D300CA819C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60A29EB521BBB1D300CA819C /* Assets.xcassets */; };
 		60A29EB921BBB1D300CA819C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A29EB721BBB1D300CA819C /* LaunchScreen.storyboard */; };
+		60A29EC121BBF22B00CA819C /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A29EC021BBF22B00CA819C /* NoteDetailViewController.swift */; };
+		60A29EC921BBF33B00CA819C /* CustomCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A29EC721BBF33B00CA819C /* CustomCellCollectionViewCell.swift */; };
+		60A29ECA21BBF33B00CA819C /* CustomCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60A29EC821BBF33B00CA819C /* CustomCellCollectionViewCell.xib */; };
+		60A29ED121BCAA0800CA819C /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60A29ED021BCA9F700CA819C /* fontawesome-webfont.ttf */; };
+		60A29ED821BCF5A300CA819C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60A29EDA21BCF5A300CA819C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,16 @@
 		60A29EB521BBB1D300CA819C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60A29EB821BBB1D300CA819C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60A29EBA21BBB1D300CA819C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60A29EC021BBF22B00CA819C /* NoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
+		60A29EC721BBF33B00CA819C /* CustomCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		60A29EC821BBF33B00CA819C /* CustomCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		60A29ED021BCA9F700CA819C /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		60A29ED221BCF28A00CA819C /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Main.strings; sourceTree = "<group>"; };
+		60A29ED321BCF28A00CA819C /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		60A29ED421BCF2A300CA819C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		60A29ED521BCF2A300CA819C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		60A29ED921BCF5A300CA819C /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Localizable.strings; sourceTree = "<group>"; };
+		60A29EDB21BCF5D000CA819C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +71,60 @@
 		60A29EAA21BBB1D200CA819C /* CoreDataHomeworkNote */ = {
 			isa = PBXGroup;
 			children = (
-				60A29EAB21BBB1D200CA819C /* AppDelegate.swift */,
-				60A29EAD21BBB1D200CA819C /* ViewController.swift */,
-				60A29EAF21BBB1D200CA819C /* Main.storyboard */,
-				60A29EB521BBB1D300CA819C /* Assets.xcassets */,
-				60A29EB721BBB1D300CA819C /* LaunchScreen.storyboard */,
+				60A29EC621BBF27F00CA819C /* supporting files */,
+				60A29EC521BBF25E00CA819C /* CustomCell */,
+				60A29EC421BBF25700CA819C /* view */,
+				60A29EC321BBF24B00CA819C /* viewController */,
+				60A29EC221BBF23900CA819C /* model */,
 				60A29EBA21BBB1D300CA819C /* Info.plist */,
 				60A29EB221BBB1D200CA819C /* CoreDataHomeworkNote.xcdatamodeld */,
 			);
 			path = CoreDataHomeworkNote;
+			sourceTree = "<group>";
+		};
+		60A29EC221BBF23900CA819C /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		60A29EC321BBF24B00CA819C /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				60A29EAD21BBB1D200CA819C /* ViewController.swift */,
+				60A29EC021BBF22B00CA819C /* NoteDetailViewController.swift */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		60A29EC421BBF25700CA819C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				60A29EAF21BBB1D200CA819C /* Main.storyboard */,
+				60A29EB721BBB1D300CA819C /* LaunchScreen.storyboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		60A29EC521BBF25E00CA819C /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				60A29EC721BBF33B00CA819C /* CustomCellCollectionViewCell.swift */,
+				60A29EC821BBF33B00CA819C /* CustomCellCollectionViewCell.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		60A29EC621BBF27F00CA819C /* supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				60A29ED021BCA9F700CA819C /* fontawesome-webfont.ttf */,
+				60A29EAB21BBB1D200CA819C /* AppDelegate.swift */,
+				60A29EB521BBB1D300CA819C /* Assets.xcassets */,
+				60A29EDA21BCF5A300CA819C /* Localizable.strings */,
+			);
+			path = "supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +169,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 60A29E9F21BBB1D200CA819C;
 			productRefGroup = 60A29EA921BBB1D200CA819C /* Products */;
@@ -126,7 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60A29EB921BBB1D300CA819C /* LaunchScreen.storyboard in Resources */,
+				60A29ED821BCF5A300CA819C /* Localizable.strings in Resources */,
 				60A29EB621BBB1D300CA819C /* Assets.xcassets in Resources */,
+				60A29ED121BCAA0800CA819C /* fontawesome-webfont.ttf in Resources */,
+				60A29ECA21BBF33B00CA819C /* CustomCellCollectionViewCell.xib in Resources */,
 				60A29EB121BBB1D200CA819C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60A29EAE21BBB1D200CA819C /* ViewController.swift in Sources */,
+				60A29EC121BBF22B00CA819C /* NoteDetailViewController.swift in Sources */,
 				60A29EB421BBB1D200CA819C /* CoreDataHomeworkNote.xcdatamodeld in Sources */,
 				60A29EAC21BBB1D200CA819C /* AppDelegate.swift in Sources */,
+				60A29EC921BBF33B00CA819C /* CustomCellCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +217,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				60A29EB021BBB1D200CA819C /* Base */,
+				60A29ED221BCF28A00CA819C /* km */,
+				60A29ED421BCF2A300CA819C /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -159,8 +227,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				60A29EB821BBB1D300CA819C /* Base */,
+				60A29ED321BCF28A00CA819C /* km */,
+				60A29ED521BCF2A300CA819C /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		60A29EDA21BCF5A300CA819C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60A29ED921BCF5A300CA819C /* km */,
+				60A29EDB21BCF5D000CA819C /* ko */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -170,6 +249,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -231,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
