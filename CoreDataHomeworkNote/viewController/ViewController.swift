@@ -118,6 +118,10 @@ class ViewController: UIViewController {
         let cellLocation = gestureRecognizer.location(in: noteCollectionView)
         if let index : IndexPath = (noteCollectionView.indexPathForItem(at: cellLocation)){
             let alertController = UIAlertController(title: "Delete Now?", message: "", preferredStyle: .actionSheet)
+            // Actionsheet alert for ipad configure
+            alertController.popoverPresentationController?.sourceView = self.view
+            alertController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection()
+            alertController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
             let agree = UIAlertAction(title: "Yes, Delete Now", style: .default) { (alert) in
                 self.deleteObject(self.notes[index.row])
                 self.notes.remove(at: index.row)
