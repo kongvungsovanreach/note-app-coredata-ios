@@ -130,7 +130,7 @@ class NoteDetailViewController: UIViewController {
     }
 }
 extension NoteDetailViewController : UITextViewDelegate {
-    //Handle for textView placeholder
+    //Handle for textView placeholder!
     func textViewDidBeginEditing(_ textView: UITextView) {
         if contentTextView.text == "Input you note here!"{
             contentTextView.text = ""
