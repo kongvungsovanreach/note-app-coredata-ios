@@ -27,6 +27,10 @@ class ViewController: UIViewController {
         nibRegisterConfigure()
         bottomBarActionConfigure()
         longCellPressConfigure()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25)]
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -26,6 +26,7 @@ class NoteDetailViewController: UIViewController {
         navigationController?.interactivePopGestureRecognizer?.addTarget(self, action: #selector(self.handlePopGesture))
         firstLaunchConfigure()
         keyboardAppearanceConfigure()
+        navigationItem.largeTitleDisplayMode = .never
     }
 
     override func viewWillDisappear(_ animated: Bool) {
