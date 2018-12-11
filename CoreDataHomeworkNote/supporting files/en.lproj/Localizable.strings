@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  CoreDataHomeworkNote
+
+  Created by Kong Vungsovanreach on 12/9/18.
+  Copyright © 2018 Kong Vungsovanreach. All rights reserved.
+*/
+"title" = "Google Note";
+"takeNote" = "Take a note...";
+"choose_language" = "Please choose language";
+"english" = "English";
+"khmer" = "Khmer";
+"korean" = "Korean";
+"cancel" = "Cancel";
+"wanna_delete" = "Do you want to delete?";
+"delete_one" = "Delete it";
+"delete_all" = "Delete all notes";
+"save" = "Save";
+"title_placeholder" = "Note title here!";
+"search" = "Search here!";
+"error" = "Invalid Input!";
+"error_message" = "Note cannot be title-less";
+"ok" = "Yes bro";

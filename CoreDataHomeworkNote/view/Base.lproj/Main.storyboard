@@ -52,7 +52,7 @@
                                 <items/>
                             </toolbar>
                             <label opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" text="Take a note..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcW-cV-6YP">
-                                <rect key="frame" x="16" y="743" width="201" height="21"/>
+                                <rect key="frame" x="16" y="723" width="201" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -66,18 +66,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="upW-So-L5C" firstAttribute="leading" secondItem="AcW-cV-6YP" secondAttribute="trailing" constant="8" symbolic="YES" id="2HO-T3-ze2"/>
                             <constraint firstItem="qcn-yv-WnN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4ZF-t5-95O"/>
                             <constraint firstItem="vjx-gP-lqp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Fx-bP-6bw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="upW-So-L5C" secondAttribute="bottom" constant="16" id="Fed-Zl-S9y"/>
                             <constraint firstItem="vjx-gP-lqp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Jzm-2m-cgO"/>
-                            <constraint firstItem="AcW-cV-6YP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OBk-TZ-jWc"/>
+                            <constraint firstItem="AcW-cV-6YP" firstAttribute="top" secondItem="qcn-yv-WnN" secondAttribute="top" id="K3N-YL-Had"/>
                             <constraint firstItem="qcn-yv-WnN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P1i-YH-13Q"/>
+                            <constraint firstItem="AcW-cV-6YP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rh7-js-35p"/>
                             <constraint firstItem="qcn-yv-WnN" firstAttribute="top" secondItem="vjx-gP-lqp" secondAttribute="bottom" id="S8E-Py-IHY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AcW-cV-6YP" secondAttribute="bottom" constant="14" id="WQN-sh-gjB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="upW-So-L5C" secondAttribute="trailing" constant="16" id="Zh4-On-bbq"/>
+                            <constraint firstItem="AcW-cV-6YP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eeJ-hM-7ZM"/>
                             <constraint firstItem="vjx-gP-lqp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fDF-hx-Yeg"/>
                             <constraint firstItem="qcn-yv-WnN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fp3-Wt-M79"/>
-                            <constraint firstItem="upW-So-L5C" firstAttribute="leading" secondItem="AcW-cV-6YP" secondAttribute="trailing" constant="8" id="yFB-f2-sDp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -118,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Input you note here!" translatesAutoresizingMaskIntoConstraints="NO" id="IKJ-mi-dZs">
-                                <rect key="frame" x="16" y="140" width="343" height="638"/>
+                                <rect key="frame" x="16" y="140" width="343" height="628"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -139,14 +140,14 @@
                             <constraint firstItem="ect-ui-Rvg" firstAttribute="top" secondItem="CVg-TA-6D1" secondAttribute="top" constant="14" id="CMf-AR-0fo"/>
                             <constraint firstItem="IKJ-mi-dZs" firstAttribute="leading" secondItem="ect-ui-Rvg" secondAttribute="leading" id="CrG-J3-IgB"/>
                             <constraint firstItem="IKJ-mi-dZs" firstAttribute="top" secondItem="ect-ui-Rvg" secondAttribute="bottom" constant="8" id="JKN-rF-zwF"/>
-                            <constraint firstItem="CVg-TA-6D1" firstAttribute="bottom" secondItem="IKJ-mi-dZs" secondAttribute="bottom" id="Ji9-g0-nMC"/>
+                            <constraint firstItem="CVg-TA-6D1" firstAttribute="bottom" secondItem="IKJ-mi-dZs" secondAttribute="bottom" constant="10" id="Ji9-g0-nMC"/>
                             <constraint firstItem="ect-ui-Rvg" firstAttribute="leading" secondItem="CVg-TA-6D1" secondAttribute="leading" constant="16" id="JiC-Aw-a7M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CVg-TA-6D1"/>
                     </view>
                     <navigationItem key="navigationItem" id="y5L-YW-4TG">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="SLC-VN-l2T">
+                            <barButtonItem title="Save" id="SLC-VN-l2T">
                                 <connections>
                                     <action selector="saveNote:" destination="qLg-md-QTJ" id="6Up-te-Ta5"/>
                                 </connections>
@@ -161,6 +162,7 @@
                     <connections>
                         <outlet property="contentTextView" destination="IKJ-mi-dZs" id="KbE-aC-ImN"/>
                         <outlet property="deleteButton" destination="i1S-Gp-tht" id="Tip-Rl-mEo"/>
+                        <outlet property="saveButton" destination="SLC-VN-l2T" id="bu6-Xb-fiu"/>
                         <outlet property="titleTextField" destination="ect-ui-Rvg" id="rAx-sL-JZ0"/>
                     </connections>
                 </viewController>

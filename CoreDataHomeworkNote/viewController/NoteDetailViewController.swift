@@ -11,6 +11,8 @@ import CoreData
 
 class NoteDetailViewController: UIViewController {
     // Variable declaration block
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
@@ -22,11 +24,9 @@ class NoteDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentTextView.showsVerticalScrollIndicator = false
-        navigationController?.interactivePopGestureRecognizer?.addTarget(self, action: #selector(self.handlePopGesture))
+        storyboardConfig()
         firstLaunchConfigure()
         keyboardAppearanceConfigure()
-        navigationItem.largeTitleDisplayMode = .never
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -34,12 +34,25 @@ class NoteDetailViewController: UIViewController {
         NoteDetailViewController.note = nil
     }
 
+    // Function to config basic element of storyboard
+    func storyboardConfig() {
+        contentTextView.showsVerticalScrollIndicator = false
+        navigationController?.interactivePopGestureRecognizer?.addTarget(self, action: #selector(self.handlePopGesture))
+        navigationItem.largeTitleDisplayMode = .never
+        contentTextView.layer.borderWidth = 1
+        contentTextView.layer.borderColor = UIColor(rgb: 0xF0F0F0).cgColor
+        contentTextView.layer.cornerRadius = 5
+        saveButton.title = "save".localized
+        titleTextField.placeholder = "title_placeholder".localized
+        contentTextView.delegate = self
+    }
+
     // Save button tap handler
     @IBAction func saveNote(_ sender: Any) {
         // Validate empty title textfield
         if (titleTextField.text?.isEmpty)! {
-            let alertController = UIAlertController(title: "Invalid Note", message: "Note cannot be title-less", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            let alertController = UIAlertController(title: "error".localized, message: "error_message".localized, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "ok".localized, style: .cancel, handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
         self.navigationController?.popToRootViewController(animated: true)
@@ -89,7 +102,7 @@ class NoteDetailViewController: UIViewController {
             contentTextView.text = (note.value(forKey: "content") as! String)
         }else { // If it is an inserting request
             titleTextField.text = ""
-            contentTextView.text = ""
+            contentTextView.textColor = .lightGray
             deleteButton.isEnabled = false
         }
     }
@@ -114,6 +127,15 @@ class NoteDetailViewController: UIViewController {
         contentTextView.scrollIndicatorInsets = contentTextView.contentInset
         let selectedRange = contentTextView.selectedRange
         contentTextView.scrollRangeToVisible(selectedRange)
+    }
+}
+extension NoteDetailViewController : UITextViewDelegate {
+    //Handle for textView placeholder
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if contentTextView.text == "Input you note here!"{
+            contentTextView.text = ""
+            contentTextView.textColor = .black
+        }
     }
 }
 

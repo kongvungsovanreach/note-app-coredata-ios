@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var takeNoteLabel: UILabel!
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var noteCollectionView: UICollectionView!
+    var searchController = UISearchController()
     // Note array for displaying in collectionView
     var notes = [NSManagedObject]()
     // Core data appDelegate and context
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes =
             [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25)]
-
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: Notification.Name(rawValue: "languageChange"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,32 +42,28 @@ class ViewController: UIViewController {
 
     // Option button tap handler for changing language using localization
     @IBAction func optionButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Choose your language", message: "", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "choose_language".localized, message: "", preferredStyle: .actionSheet)
         // Ipad actionSheet configure
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection()
         alertController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         //English was chosen
-        let en = UIAlertAction(title: "English", style: .default, handler: {(alert) in
-            self.takeNoteLabel.text = "Take a note..."
-            self.title = "Google Note"
+        let en = UIAlertAction(title: "english".localized, style: .default, handler: {(alert) in
+            LanguageManagement.shared.language = "en"
+            NotificationCenter.default.post(name: Notification.Name("languageChange"), object: nil)
         })
         //Khmer was chosen
-        let kh = UIAlertAction(title: "Khmer", style: .default, handler:{(alert) in
-            let path = Bundle.main.path(forResource: "km", ofType: "lproj")
-            let bundle = Bundle.init(path: path!)! as Bundle
-            self.takeNoteLabel.text = bundle.localizedString(forKey: "takeNote", value: nil, table: nil)
-            self.title = bundle.localizedString(forKey: "title", value: nil, table: nil)
+        let kh = UIAlertAction(title: "khmer".localized, style: .default, handler:{(alert) in
+            LanguageManagement.shared.language = "km"
+            NotificationCenter.default.post(name: Notification.Name("languageChange"), object: nil)
         })
         //Korean was chosen
-        let kr = UIAlertAction(title: "Korean", style: .default, handler: {(alert) in
-            let path = Bundle.main.path(forResource: "ko", ofType: "lproj")
-            let bundle = Bundle.init(path: path!)! as Bundle
-            self.takeNoteLabel.text = bundle.localizedString(forKey: "takeNote", value: nil, table: nil)
-            self.title = bundle.localizedString(forKey: "title", value: nil, table: nil)
+        let kr = UIAlertAction(title: "korean".localized, style: .default, handler: {(alert) in
+            LanguageManagement.shared.language = "ko"
+            NotificationCenter.default.post(name: Notification.Name("languageChange"), object: nil)
         })
         //Cencel was tapped
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil)
         alertController.addAction(en)
         alertController.addAction(kh)
         alertController.addAction(kr)
@@ -76,7 +73,7 @@ class ViewController: UIViewController {
 
     // Function for search button tap
     @IBAction func searchButtonTap(_ sender: Any) {
-        let searchController = UISearchController(searchResultsController: nil)
+        searchController = UISearchController(searchResultsController: nil)
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.barTintColor = UIColor(rgb: 0xFBBC06)
         present(searchController, animated:  true, completion: nil)
@@ -121,24 +118,24 @@ class ViewController: UIViewController {
         }
         let cellLocation = gestureRecognizer.location(in: noteCollectionView)
         if let index : IndexPath = (noteCollectionView.indexPathForItem(at: cellLocation)){
-            let alertController = UIAlertController(title: "Delete Now?", message: "", preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: "wanna_delete".localized, message: "", preferredStyle: .actionSheet)
             // Actionsheet alert for ipad configure
             alertController.popoverPresentationController?.sourceView = self.view
             alertController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection()
             alertController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-            let agree = UIAlertAction(title: "Yes, Delete Now", style: .default) { (alert) in
+            let agree = UIAlertAction(title: "delete_one".localized, style: .default) { (alert) in
                 self.deleteObject(self.notes[index.row])
                 self.notes.remove(at: index.row)
                 self.noteCollectionView.deleteItems(at: [index])
 
             }
-            let agreeAll = UIAlertAction(title: "Yes, All Notes", style: .default) { (alert) in
+            let agreeAll = UIAlertAction(title: "delete_all".localized, style: .default) { (alert) in
                 self.deleteAllCoreData()
                 self.notes.removeAll()
                 self.noteCollectionView.reloadData()
 
             }
-            let deny = UIAlertAction(title: "No, Go Back", style: .cancel, handler: nil)
+            let deny = UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil)
             alertController.addAction(agree)
             alertController.addAction(agreeAll)
             alertController.addAction(deny)
@@ -149,6 +146,13 @@ class ViewController: UIViewController {
     // Add new note handler
     @objc func addNewNote() {
         self.performSegue(withIdentifier: "detail", sender: self)
+    }
+
+    // Change language
+    @objc func changeLanguage(){
+        takeNoteLabel.text = "takeNote".localized
+        self.navigationItem.title = "title".localized
+        searchController.searchBar.placeholder = "search".localized
     }
 }
 

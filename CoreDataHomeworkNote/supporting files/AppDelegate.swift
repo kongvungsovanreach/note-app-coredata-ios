@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Thread.sleep(forTimeInterval: 1)
+//        Thread.sleep(forTimeInterval: 1)
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barTintColor = UIColor(rgb: 0xFBBC06)
+        LanguageManagement.shared.language = "en"
         // Override point for customization after application launch.
         return true
     }

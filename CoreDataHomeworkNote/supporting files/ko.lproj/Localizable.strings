@@ -7,3 +7,17 @@
 */
 "title" = "메모 프로그램";
 "takeNote" = "새로운 쪽지...";
+"choose_language" = "언어를 선택하십시오";
+"english" = "영어";
+"khmer" = "크메르";
+"korean" = "한국어";
+"cancel" = "취소";
+"wanna_delete" = "삭제 하시겠습니까?";
+"delete_one" = "하나를 삭제하다";
+"delete_all" = "모두 삭제";
+"save" = "구하다";
+"title_placeholder" = "입력 음표 제목!!";
+"search" = "여기에서 검색";
+"error" = "잘못된 입력!";
+"error_message" = "아니 제목이 될 수 없습니다";
+"ok" = "네 형제";

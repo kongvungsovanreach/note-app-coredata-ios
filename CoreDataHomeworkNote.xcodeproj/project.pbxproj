@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600CBD9A21BF7569002AA081 /* LanguageManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600CBD9921BF7569002AA081 /* LanguageManagement.swift */; };
 		60A29EAC21BBB1D200CA819C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A29EAB21BBB1D200CA819C /* AppDelegate.swift */; };
 		60A29EAE21BBB1D200CA819C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A29EAD21BBB1D200CA819C /* ViewController.swift */; };
 		60A29EB121BBB1D200CA819C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A29EAF21BBB1D200CA819C /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		600CBD9921BF7569002AA081 /* LanguageManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManagement.swift; sourceTree = "<group>"; };
+		600CBD9B21BF7C5B002AA081 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		60A29EA821BBB1D200CA819C /* CoreDataHomeworkNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataHomeworkNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A29EAB21BBB1D200CA819C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60A29EAD21BBB1D200CA819C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		600CBD9821BF74E3002AA081 /* Language Management */ = {
+			isa = PBXGroup;
+			children = (
+				600CBD9921BF7569002AA081 /* LanguageManagement.swift */,
+			);
+			path = "Language Management";
+			sourceTree = "<group>";
+		};
 		60A29E9F21BBB1D200CA819C = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +82,7 @@
 		60A29EAA21BBB1D200CA819C /* CoreDataHomeworkNote */ = {
 			isa = PBXGroup;
 			children = (
+				600CBD9821BF74E3002AA081 /* Language Management */,
 				60A29EC621BBF27F00CA819C /* supporting files */,
 				60A29EC521BBF25E00CA819C /* CustomCell */,
 				60A29EC421BBF25700CA819C /* view */,
@@ -204,6 +216,7 @@
 			files = (
 				60A29EAE21BBB1D200CA819C /* ViewController.swift in Sources */,
 				60A29EC121BBF22B00CA819C /* NoteDetailViewController.swift in Sources */,
+				600CBD9A21BF7569002AA081 /* LanguageManagement.swift in Sources */,
 				60A29EB421BBB1D200CA819C /* CoreDataHomeworkNote.xcdatamodeld in Sources */,
 				60A29EAC21BBB1D200CA819C /* AppDelegate.swift in Sources */,
 				60A29EC921BBF33B00CA819C /* CustomCellCollectionViewCell.swift in Sources */,
@@ -238,6 +251,7 @@
 			children = (
 				60A29ED921BCF5A300CA819C /* km */,
 				60A29EDB21BCF5D000CA819C /* ko */,
+				600CBD9B21BF7C5B002AA081 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
